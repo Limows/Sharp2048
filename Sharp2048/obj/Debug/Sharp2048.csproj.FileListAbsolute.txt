@@ -1,9 +1,0 @@
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.GenerateResource.cache
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.CoreCompileInputs.cache
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.MainForm.resources
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\bin\Debug\Sharp2048.exe
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\bin\Debug\Sharp2048.pdb
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.Properties.Resources.resources
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.exe
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.pdb
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.AssemblyReference.cache

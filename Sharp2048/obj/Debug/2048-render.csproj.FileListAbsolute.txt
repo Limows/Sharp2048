@@ -1,9 +1,0 @@
-C:\Users\Limow\source\repos\2048-render\2048-render\bin\Debug\2048-render.exe
-C:\Users\Limow\source\repos\2048-render\2048-render\bin\Debug\2048-render.pdb
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\2048-render.csproj.AssemblyReference.cache
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\_2048_render.MainForm.resources
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\_2048_render.Properties.Resources.resources
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\2048-render.csproj.GenerateResource.cache
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\2048-render.csproj.CoreCompileInputs.cache
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\2048-render.exe
-C:\Users\Limow\source\repos\2048-render\2048-render\obj\Debug\2048-render.pdb
