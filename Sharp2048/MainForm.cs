@@ -53,6 +53,24 @@ namespace Sharp2048
             return Parameters.GameMatrix[x, y] == 0 ? false : true;
         }
 
+        public bool CheckEndGame()
+        {
+            int n = Parameters.GameMatrix.GetLength(0);
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (Parameters.GameMatrix[i, j] == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
         static void SetColor(int Number)
         {
             Color NumberColor;
@@ -149,6 +167,13 @@ namespace Sharp2048
             }
         }
 
+        public void UpdateScore(int Points)
+        {
+            Parameters.Score += Points;
+
+            ScoreLabel.Text = "Score: " + Parameters.Score;
+        }
+
         public void SlideRight()
         {
             int n = Parameters.GameMatrix.GetLength(0);
@@ -159,19 +184,35 @@ namespace Sharp2048
                 {
                     if (Parameters.GameMatrix[i, j] > 0) 
                     {
+
                         for (int k = 1; k < n - i; k++)
                         {
                             if (Parameters.GameMatrix[i + k, j] == 0)
                             {
-                                Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i, j];
+                                Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j];
+                                //Parameters.GameMatrix[i, j] = 0;
                                 Parameters.GameMatrix[i + k - 1, j] = 0;
+
+                                Parameters.IsMove = true;
                             }
                             else
                             {
-                                if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i, j])
+                                if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i + k - 1, j])
                                 {
-                                    Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i, j]*2;
+                                    Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j]*2;
+                                    //Parameters.GameMatrix[i, j] = 0;
                                     Parameters.GameMatrix[i + k - 1, j] = 0;
+
+                                    Parameters.IsMove = true;
+
+                                    UpdateScore(Parameters.GameMatrix[i + k, j]);
+
+                                    if (Parameters.GameMatrix[i + k, j] == 2048)
+                                    {
+                                        MessageBox.Show("You Win!");
+
+                                        NewGame();
+                                    }
                                 }
 
                                 break;
@@ -184,14 +225,14 @@ namespace Sharp2048
             }
         }
 
-        public void SlideUp()
+        public void SlideDown()
         {
             Rotate(90);
             SlideRight();
             Rotate(270);
         }
 
-        public void SlideDown()
+        public void SlideUp()
         {
             Rotate(270);
             SlideRight();
@@ -229,6 +270,8 @@ namespace Sharp2048
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
+            Parameters.IsMove = false;
+
             switch (e.KeyCode.ToString())
             {
                 case "Left":
@@ -245,14 +288,30 @@ namespace Sharp2048
                     break;
             }
 
-            //AddNumber(2);
+            if (Parameters.IsMove)
+            {
+                AddNumber(2);
+            }
+            else
+            {
+                if (CheckEndGame())
+                {   
+                    MessageBox.Show("Game Over!");
+                    NewGame();
+                }
+            }
 
             DrawGame(Parameters.GameMatrix);
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            NewGame();
+        }
 
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

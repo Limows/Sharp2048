@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E842AB44-5810-4430-ADCD-19483E8ECC20}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_2048_render</RootNamespace>
-    <AssemblyName>2048-render</AssemblyName>
+    <RootNamespace>Sharp2048</RootNamespace>
+    <AssemblyName>Sharp2048</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -63,6 +63,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
