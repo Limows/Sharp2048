@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp2048", "Sharp2048\Sharp2048.csproj", "{06F44DAB-B9FA-4D69-B2CC-42BF2E23298B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp2048", "Sharp2048\Sharp2048.csproj", "{E842AB44-5810-4430-ADCD-19483E8ECC20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06F44DAB-B9FA-4D69-B2CC-42BF2E23298B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06F44DAB-B9FA-4D69-B2CC-42BF2E23298B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06F44DAB-B9FA-4D69-B2CC-42BF2E23298B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06F44DAB-B9FA-4D69-B2CC-42BF2E23298B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E842AB44-5810-4430-ADCD-19483E8ECC20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E842AB44-5810-4430-ADCD-19483E8ECC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E842AB44-5810-4430-ADCD-19483E8ECC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E842AB44-5810-4430-ADCD-19483E8ECC20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {93776CE1-5077-4595-ADE9-2C2723A4901B}
+		SolutionGuid = {4DB2C827-7FFB-45EA-BB04-82987B3B5C50}
 	EndGlobalSection
 EndGlobal
