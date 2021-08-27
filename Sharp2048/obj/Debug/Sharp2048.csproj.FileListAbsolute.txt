@@ -1,8 +1,9 @@
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\bin\Debug\2048-render.exe
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\bin\Debug\2048-render.pdb
-C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\_2048_render.MainForm.resources
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\_2048_render.Properties.Resources.resources
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.GenerateResource.cache
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.CoreCompileInputs.cache
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\2048-render.exe
 C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\2048-render.pdb
+C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.csproj.AssemblyReference.cache
+C:\Users\Limow\Documents\GitHub\Sharp2048\Sharp2048\obj\Debug\Sharp2048.MainForm.resources

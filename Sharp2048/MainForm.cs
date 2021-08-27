@@ -149,38 +149,63 @@ namespace Sharp2048
             }
         }
 
-        static void SlideLeft()
+        public void SlideRight()
         {
             int n = Parameters.GameMatrix.GetLength(0);
 
-            for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
             {
+                for (int i = 2; i >= 0; i--)
+                {
+                    if (Parameters.GameMatrix[i, j] > 0) 
+                    {
+                        for (int k = 1; k < n - i; k++)
+                        {
+                            if (Parameters.GameMatrix[i + k, j] == 0)
+                            {
+                                Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i, j];
+                                Parameters.GameMatrix[i + k - 1, j] = 0;
+                            }
+                            else
+                            {
+                                if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i, j])
+                                {
+                                    Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i, j]*2;
+                                    Parameters.GameMatrix[i + k - 1, j] = 0;
+                                }
 
+                                break;
+                            }
+                        }
+
+                        
+                    }
+                }
             }
         }
 
-        static void SlideUp()
-        {
-            Rotate(270);
-            SlideLeft();
-            Rotate(90);
-        }
-
-        static void SlideDown()
+        public void SlideUp()
         {
             Rotate(90);
-            SlideLeft();
+            SlideRight();
             Rotate(270);
         }
 
-        static void SlideRight()
+        public void SlideDown()
+        {
+            Rotate(270);
+            SlideRight();
+            Rotate(90);
+        }
+
+        public void SlideLeft()
         {
             Rotate(180);
-            SlideLeft();
+            SlideRight();
             Rotate(180);
         }
 
-        static void Rotate(int Degree)
+        public void Rotate(int Degree)
         {
             int n = Parameters.GameMatrix.GetLength(0);
 
@@ -220,7 +245,7 @@ namespace Sharp2048
                     break;
             }
 
-            AddNumber(2);
+            //AddNumber(2);
 
             DrawGame(Parameters.GameMatrix);
         }
