@@ -14,7 +14,8 @@ namespace Sharp2048
         public static bool IsMove = false;
         public static Brush NumberBrush;
         public static Brush TextBrush = new SolidBrush(Color.Black);
-        public static Font TextFont = new Font("Impact", 13);
+        public static Font TextFont = new Font("Impact", 13, FontStyle.Regular);
         public static int Score = 0;
+        public static Bitmap GameField;
     }
 }

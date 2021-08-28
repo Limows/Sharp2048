@@ -29,7 +29,7 @@ namespace Sharp2048
         {
             Parameters.IsGame = true;
 
-            InitMatrix(out Parameters.GameMatrix, Parameters.FieldSize);
+            Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
 
@@ -113,7 +113,7 @@ namespace Sharp2048
             Parameters.GameMatrix[x, y] = Number;
         }
 
-        public void InitMatrix(out int[,] GameMatrix, int n)
+        public void Init(out int[,] GameMatrix, int n)
         {
             GameMatrix = new int[n, n];
 
@@ -124,11 +124,14 @@ namespace Sharp2048
                     GameMatrix[i, j] = 0;
                 }
             }
+
+            Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            Parameters.Score = 0;
         }
 
         public void DrawGame(int[,] GameMatrix)
         {
-            GameFieldBox.Image = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            GameFieldBox.Image = Parameters.GameField;
             Pen FieldPen = new Pen(Color.Black, 2);
             int n = GameMatrix.GetLength(0);
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Sharp2048
 {
-    partial class MainForm
+    partial class GameForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

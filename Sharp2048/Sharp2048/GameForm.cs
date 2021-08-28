@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Sharp2048
 {
-    public partial class MainForm : Form
+    public partial class GameForm : Form
     {
-        public MainForm()
+        public GameForm()
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace Sharp2048
         {
             Parameters.IsGame = true;
 
-            InitMatrix(out Parameters.GameMatrix, Parameters.FieldSize);
+            Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
 
@@ -113,7 +113,7 @@ namespace Sharp2048
             Parameters.GameMatrix[x, y] = Number;
         }
 
-        public void InitMatrix(out int[,] GameMatrix, int n)
+        public void Init(out int[,] GameMatrix, int n)
         {
             GameMatrix = new int[n, n];
 
@@ -124,11 +124,14 @@ namespace Sharp2048
                     GameMatrix[i, j] = 0;
                 }
             }
+
+            Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            Parameters.Score = 0;
         }
 
         public void DrawGame(int[,] GameMatrix)
         {
-            GameFieldBox.Image = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            GameFieldBox.Image = Parameters.GameField;
             Pen FieldPen = new Pen(Color.Black, 2);
             int n = GameMatrix.GetLength(0);
 
@@ -190,7 +193,6 @@ namespace Sharp2048
                             if (Parameters.GameMatrix[i + k, j] == 0)
                             {
                                 Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j];
-                                //Parameters.GameMatrix[i, j] = 0;
                                 Parameters.GameMatrix[i + k - 1, j] = 0;
 
                                 Parameters.IsMove = true;
@@ -200,7 +202,6 @@ namespace Sharp2048
                                 if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i + k - 1, j])
                                 {
                                     Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j]*2;
-                                    //Parameters.GameMatrix[i, j] = 0;
                                     Parameters.GameMatrix[i + k - 1, j] = 0;
 
                                     Parameters.IsMove = true;
@@ -210,7 +211,6 @@ namespace Sharp2048
                                     if (Parameters.GameMatrix[i + k, j] == 2048)
                                     {
                                         MessageBox.Show("You Win!");
-
                                         NewGame();
                                     }
                                 }
