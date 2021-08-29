@@ -20,6 +20,30 @@ namespace Sharp2048
             NewGame();
         }
 
+        static void SetColor(int Number)
+        {
+            Color NumberColor;
+
+            switch (Number)
+            {
+                case 0: NumberColor = Color.DarkGray; break;
+                case 2: NumberColor = Color.Ivory; break;
+                case 4: NumberColor = Color.Beige; break;
+                case 8: NumberColor = Color.Coral; break;
+                case 16: NumberColor = Color.Orange; break;
+                case 32: NumberColor = Color.DarkOrange; break;
+                case 64: NumberColor = Color.Red; break;
+                case 128: NumberColor = Color.BlanchedAlmond; break;
+                case 256: NumberColor = Color.Khaki; break;
+                case 512: NumberColor = Color.Yellow; break;
+                case 1024: NumberColor = Color.Gold; break;
+                case 2048: NumberColor = Color.Gold; break;
+                default: NumberColor = Color.Gray; break;
+            }
+
+            Parameters.NumberBrush = new SolidBrush(NumberColor);
+        }
+
         public void SetupGame(int FieldSize)
         {
             Parameters.FieldSize = FieldSize;
@@ -50,7 +74,7 @@ namespace Sharp2048
 
         public bool CheckCollision(int x, int y)
         {
-            return Parameters.GameMatrix[x, y] == 0 ? false : true;
+            return Parameters.GameMatrix[x, y] != 0;
         }
 
         public bool CheckEndGame()
@@ -69,30 +93,6 @@ namespace Sharp2048
             }
 
             return true;
-        }
-
-        static void SetColor(int Number)
-        {
-            Color NumberColor;
-
-            switch (Number)
-            {
-                case 0: NumberColor = Color.DarkGray; break;
-                case 2: NumberColor = Color.Ivory; break;
-                case 4: NumberColor = Color.Beige; break;
-                case 8: NumberColor = Color.Coral; break;
-                case 16: NumberColor = Color.Orange; break;
-                case 32: NumberColor = Color.DarkOrange; break;
-                case 64: NumberColor = Color.Red; break;
-                case 128: NumberColor = Color.BlanchedAlmond; break;
-                case 256: NumberColor = Color.Khaki; break;
-                case 512: NumberColor = Color.Yellow; break;
-                case 1024: NumberColor = Color.Gold; break;
-                case 2048: NumberColor = Color.Gold; break;
-                default: NumberColor = Color.Gray; break;
-            }
-
-            Parameters.NumberBrush = new SolidBrush(NumberColor);
         }
 
         public void AddNumber(int Number)
@@ -129,47 +129,6 @@ namespace Sharp2048
             Parameters.Score = 0;
         }
 
-        public void DrawGame(int[,] GameMatrix)
-        {
-            GameFieldBox.Image = Parameters.GameField;
-            Pen FieldPen = new Pen(Color.Black, 2);
-            int n = GameMatrix.GetLength(0);
-
-            using (Graphics Paint = Graphics.FromImage(GameFieldBox.Image))
-            {
-                Paint.Clear(Color.Gray);
-
-                for (int i = 0; i < n; i++)
-                {
-                    Console.WriteLine();
-
-                    for (int j = 0; j < n; j++)
-                    {
-                        SetColor(GameMatrix[i, j]);
-
-                        Rectangle NumberRect = new Rectangle(i * GameFieldBox.Width / 4 + 3, j * GameFieldBox.Height / 4 + 3, GameFieldBox.Width / 4 - 6, GameFieldBox.Height / 4 - 6);
-
-                        DrawNumber(Paint, GameMatrix[i, j], NumberRect);
-                    }
-                }
-            }
-        }
-
-        public void DrawNumber(Graphics Paint, int Number, Rectangle NumberRect)
-        {
-            RectangleF TextLayout = new RectangleF(NumberRect.X, NumberRect.Y, NumberRect.Width, NumberRect.Height);
-            StringFormat sf = new StringFormat();
-            sf.LineAlignment = StringAlignment.Center;
-            sf.Alignment = StringAlignment.Center;
-
-            Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
-
-            if (Number > 0)
-            {
-                Paint.DrawString(Number.ToString(), Parameters.TextFont, Parameters.TextBrush, TextLayout, sf);
-            }
-        }
-
         public void UpdateScore(int Points)
         {
             Parameters.Score += Points;
@@ -185,7 +144,7 @@ namespace Sharp2048
             {
                 for (int i = 2; i >= 0; i--)
                 {
-                    if (Parameters.GameMatrix[i, j] > 0) 
+                    if (Parameters.GameMatrix[i, j] > 0)
                     {
 
                         for (int k = 1; k < n - i; k++)
@@ -201,7 +160,7 @@ namespace Sharp2048
                             {
                                 if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i + k - 1, j])
                                 {
-                                    Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j]*2;
+                                    Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j] * 2;
                                     Parameters.GameMatrix[i + k - 1, j] = 0;
 
                                     Parameters.IsMove = true;
@@ -219,7 +178,7 @@ namespace Sharp2048
                             }
                         }
 
-                        
+
                     }
                 }
             }
@@ -268,6 +227,46 @@ namespace Sharp2048
             }
         }
 
+        public void DrawGame(int[,] GameMatrix)
+        {
+            GameFieldBox.Image = Parameters.GameField;
+            int n = GameMatrix.GetLength(0);
+
+            using (Graphics Paint = Graphics.FromImage(GameFieldBox.Image))
+            {
+                Paint.Clear(Color.Gray);
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.WriteLine();
+
+                    for (int j = 0; j < n; j++)
+                    {
+                        SetColor(GameMatrix[i, j]);
+
+                        Rectangle NumberRect = new Rectangle(i * GameFieldBox.Width / 4 + 3, j * GameFieldBox.Height / 4 + 3, GameFieldBox.Width / 4 - 6, GameFieldBox.Height / 4 - 6);
+
+                        DrawNumber(Paint, GameMatrix[i, j], NumberRect);
+                    }
+                }
+            }
+        }
+
+        public void DrawNumber(Graphics Paint, int Number, Rectangle NumberRect)
+        {
+            RectangleF TextLayout = new RectangleF(NumberRect.X, NumberRect.Y, NumberRect.Width, NumberRect.Height);
+            StringFormat sf = new StringFormat();
+            sf.LineAlignment = StringAlignment.Center;
+            sf.Alignment = StringAlignment.Center;
+
+            Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+
+            if (Number > 0)
+            {
+                Paint.DrawString(Number.ToString(), Parameters.TextFont, Parameters.TextBrush, TextLayout, sf);
+            }
+        }
+
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             Parameters.IsMove = false;
@@ -304,14 +303,27 @@ namespace Sharp2048
             DrawGame(Parameters.GameMatrix);
         }
 
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
         }
 
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IOHelper.WriteMatrix(Parameters.GameMatrix, "Save.dat");
+        }
+
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Init(out Parameters.GameMatrix, 4);
+            IOHelper.ReadMatrix(ref Parameters.GameMatrix, "Save.dat");
+
+            DrawGame(Parameters.GameMatrix);
         }
     }
 }
