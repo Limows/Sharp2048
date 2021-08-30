@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Sharp2048
 {
     class IOHelper
     {
-        public static void WriteMatrix(int[,] Matrix, string FilePath)
+        public static void WriteGame(int[,] Matrix, int Score, string FilePath)
         {
             int n = Matrix.GetLength(0);
             StringBuilder StringMatrix = new StringBuilder();
@@ -18,12 +19,15 @@ namespace Sharp2048
                 for (int j = 0; j < n; j++)
                 {
                     StringMatrix.Append(Matrix[i, j]);
-                    StringMatrix.Append(",");
+
+                    if (j < n - 1) StringMatrix.Append(",");
                 }
-                StringMatrix.Append(";");
+                if (i < n - 1) StringMatrix.Append(";");
             }
 
-            using (FileStream Stream = new FileStream(FilePath, FileMode.OpenOrCreate))
+            StringMatrix.Append("\n" + Score);
+
+            using (FileStream Stream = new FileStream(FilePath, FileMode.Create))
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(StringMatrix.ToString());
 
@@ -31,7 +35,7 @@ namespace Sharp2048
             }
         }
 
-        public static void ReadMatrix(ref int[,] Matrix, string FilePath)
+        public static void ReadGame(ref int[,] Matrix, ref int Score, string FilePath)
         {
             string[] MatrixRows = new string[4];
             int n = Matrix.GetLength(0);
@@ -43,18 +47,30 @@ namespace Sharp2048
                 Stream.Read(array, 0, array.Length);
                 string MatrixString = System.Text.Encoding.Default.GetString(array);
 
-                MatrixRows = MatrixString.Split(';');
+                Score = Convert.ToInt32(MatrixString.Split('\n')[1]);
+
+                MatrixRows = MatrixString.Split('\n')[0].Split(';');
             }
 
             for (int i = 0; i < n; i++)
             {
-                string Numbers = MatrixRows[i];
+                string[] Numbers = MatrixRows[i].Split(',');
 
                 for (int j = 0; j < n; j++)
                 {
-                    Matrix[i, j] = Numbers[j];
+                    Matrix[i, j] = Convert.ToInt32(Numbers[j]);
                 }
             }
+        }
+
+        public static void WriteSettings()
+        {
+
+        }
+
+        public static void ReadSettings()
+        {
+
         }
     }
 }

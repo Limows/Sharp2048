@@ -51,8 +51,6 @@ namespace Sharp2048
 
         public void NewGame()
         {
-            Parameters.IsGame = true;
-
             Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
@@ -127,6 +125,8 @@ namespace Sharp2048
 
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
             Parameters.Score = 0;
+
+            UpdateScore(0);
         }
 
         public void UpdateScore(int Points)
@@ -315,15 +315,16 @@ namespace Sharp2048
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IOHelper.WriteMatrix(Parameters.GameMatrix, "Save.dat");
+            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, "Save.dat");
         }
 
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Init(out Parameters.GameMatrix, 4);
-            IOHelper.ReadMatrix(ref Parameters.GameMatrix, "Save.dat");
+            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, "Save.dat");
 
             DrawGame(Parameters.GameMatrix);
+            UpdateScore(0);
         }
     }
 }
