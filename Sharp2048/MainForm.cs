@@ -190,9 +190,7 @@ namespace Sharp2048
                             if (Parameters.GameMatrix[i + k, j] == 0)
                             {
                                 Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j];
-                                //Parameters.GameMatrix[i, j] = 0;
                                 Parameters.GameMatrix[i + k - 1, j] = 0;
-
                                 Parameters.IsMove = true;
                             }
                             else
@@ -200,9 +198,7 @@ namespace Sharp2048
                                 if (Parameters.GameMatrix[i + k, j] == Parameters.GameMatrix[i + k - 1, j])
                                 {
                                     Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j]*2;
-                                    //Parameters.GameMatrix[i, j] = 0;
                                     Parameters.GameMatrix[i + k - 1, j] = 0;
-
                                     Parameters.IsMove = true;
 
                                     UpdateScore(Parameters.GameMatrix[i + k, j]);
@@ -210,7 +206,6 @@ namespace Sharp2048
                                     if (Parameters.GameMatrix[i + k, j] == 2048)
                                     {
                                         MessageBox.Show("You Win!");
-
                                         NewGame();
                                     }
                                 }
