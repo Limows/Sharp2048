@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Sharp2048
 {
-    public partial class MainForm : Form
+    public partial class GameForm : Form
     {
-        public MainForm()
+        public GameForm()
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace Sharp2048
         {
             Parameters.IsGame = true;
 
-            InitMatrix(out Parameters.GameMatrix, Parameters.FieldSize);
+            Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
 
@@ -113,7 +113,7 @@ namespace Sharp2048
             Parameters.GameMatrix[x, y] = Number;
         }
 
-        public void InitMatrix(out int[,] GameMatrix, int n)
+        public void Init(out int[,] GameMatrix, int n)
         {
             GameMatrix = new int[n, n];
 
@@ -124,11 +124,14 @@ namespace Sharp2048
                     GameMatrix[i, j] = 0;
                 }
             }
+
+            Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            Parameters.Score = 0;
         }
 
         public void DrawGame(int[,] GameMatrix)
         {
-            GameFieldBox.Image = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
+            GameFieldBox.Image = Parameters.GameField;
             Pen FieldPen = new Pen(Color.Black, 2);
             int n = GameMatrix.GetLength(0);
 
@@ -171,7 +174,7 @@ namespace Sharp2048
         {
             Parameters.Score += Points;
 
-            ScoreLabel.Text = "Score: " + Parameters.Score;
+            ScoreBar.Text = "Score: " + Parameters.Score;
         }
 
         public void SlideRight()
@@ -263,22 +266,27 @@ namespace Sharp2048
             }
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        private void QuitMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             Parameters.IsMove = false;
 
-            switch (e.KeyCode.ToString())
+            switch (e.KeyCode)
             {
-                case "Left":
+                case System.Windows.Forms.Keys.Left:
                     SlideLeft();
                     break;
-                case "Right":
+                case System.Windows.Forms.Keys.Right:
                     SlideRight();
                     break;
-                case "Down":
+                case System.Windows.Forms.Keys.Down:
                     SlideDown();
                     break;
-                case "Up":
+                case System.Windows.Forms.Keys.Up:
                     SlideUp();
                     break;
             }
@@ -290,7 +298,7 @@ namespace Sharp2048
             else
             {
                 if (CheckEndGame())
-                {   
+                {
                     MessageBox.Show("Game Over!");
                     NewGame();
                 }
@@ -299,14 +307,9 @@ namespace Sharp2048
             DrawGame(Parameters.GameMatrix);
         }
 
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewGameMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
-        }
-
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
