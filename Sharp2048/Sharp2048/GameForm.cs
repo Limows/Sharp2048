@@ -178,7 +178,6 @@ namespace Sharp2048
                             }
                         }
 
-
                     }
                 }
             }
