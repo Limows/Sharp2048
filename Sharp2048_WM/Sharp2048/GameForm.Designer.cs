@@ -113,6 +113,8 @@
             this.GameFieldBox.Location = new System.Drawing.Point(19, 22);
             this.GameFieldBox.Name = "GameFieldBox";
             this.GameFieldBox.Size = new System.Drawing.Size(200, 200);
+            this.GameFieldBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GameFieldBox_MouseDown);
+            this.GameFieldBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GameFieldBox_MouseUp);
             // 
             // GameForm
             // 
@@ -126,6 +128,8 @@
             this.Menu = this.MainMenu;
             this.Name = "GameForm";
             this.Text = "2048";
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseUp);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseDown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
             this.ResumeLayout(false);
 

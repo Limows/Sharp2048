@@ -323,5 +323,107 @@ namespace Sharp2048
             DrawGame(Parameters.GameMatrix);
             UpdateScore(0);
         }
+
+        private void GameForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parameters.StartX = e.X;
+            Parameters.StartY = e.Y;
+        }
+
+        private void GameForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            int StopX = e.X;
+            int StopY = e.Y;
+            Parameters.IsMove = false;
+
+            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
+            {
+                if (Parameters.StartY > StopY)
+                {
+                    SlideUp();
+                }
+                else
+                {
+                    SlideDown();
+                }
+            }
+            else
+            {
+                if (Parameters.StartX > StopX)
+                {
+                    SlideLeft();
+                }
+                else
+                {
+                    SlideRight();
+                }
+            }
+
+            if (Parameters.IsMove)
+            {
+                AddNumber(2);
+            }
+            else
+            {
+                if (CheckEndGame())
+                {
+                    MessageBox.Show("Game Over!");
+                    NewGame();
+                }
+            }
+
+            DrawGame(Parameters.GameMatrix);
+        }
+
+        private void GameFieldBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parameters.StartX = e.X;
+            Parameters.StartY = e.Y;
+        }
+
+        private void GameFieldBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            int StopX = e.X;
+            int StopY = e.Y;
+            Parameters.IsMove = false;
+
+            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
+            {
+                if (Parameters.StartY > StopY)
+                {
+                    SlideUp();
+                }
+                else
+                {
+                    SlideDown();
+                }
+            }
+            else
+            {
+                if (Parameters.StartX > StopX)
+                {
+                    SlideLeft();
+                }
+                else
+                {
+                    SlideRight();
+                }
+            }
+
+            if (Parameters.IsMove)
+            {
+                AddNumber(2);
+            }
+            else
+            {
+                if (CheckEndGame())
+                {
+                    MessageBox.Show("Game Over!");
+                    NewGame();
+                }
+            }
+
+            DrawGame(Parameters.GameMatrix);
+        }
     }
 }

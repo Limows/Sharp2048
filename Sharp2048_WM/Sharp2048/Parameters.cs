@@ -16,6 +16,8 @@ namespace Sharp2048
         public static Font TextFont = new Font("Impact", 13, FontStyle.Regular);
         public static int Score = 0;
         public static Bitmap GameField;
+        public static int StartX = 0;
+        public static int StartY = 0;
 
         public enum PalleteType
         {
