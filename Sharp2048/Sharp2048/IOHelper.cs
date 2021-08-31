@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Reflection;
 using System.IO;
-using Newtonsoft.Json;
+using System.Runtime.InteropServices;
+using IniParser;
+
 
 namespace Sharp2048
 {
@@ -68,9 +71,43 @@ namespace Sharp2048
 
         }
 
+        static private string GetConfigPath()
+        {
+            string[] ConfigFiles = Directory.GetFiles(GetCurrentDirectory(), "*.ini");
+
+            return ConfigFiles[0];
+        }
+
+        static public string GetCurrentDirectory()
+        {
+            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        }
+
         public static void ReadSettings()
         {
+            if (String.IsNullOrEmpty(Parameters.ConfigPath))
+            {
+                Parameters.ConfigPath = IOHelper.GetConfigPath();
+            }
 
+            var Parser = new FileIniDataParser();
+            var Config = Parser.ReadFile(Parameters.ConfigPath);
+
+            Parameters.HighScore = Convert.ToInt32(Config["Game"]["HighScore"]);
+            Parameters.FieldSize = Convert.ToInt32(Config["Field"]["Size"]);
+
+            switch (Config["Pallete"]["Type"])
+            {
+                case "Square":
+                    Parameters.Pallete = Parameters.PalleteType.Square;
+                    break;
+                case "Rounded":
+                    Parameters.Pallete = Parameters.PalleteType.Rounded;
+                    break;
+                default:
+                    Parameters.Pallete = Parameters.PalleteType.Square;
+                    break;
+            }
         }
     }
 }
