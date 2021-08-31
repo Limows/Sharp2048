@@ -76,10 +76,12 @@
             // SaveMenuItem
             // 
             this.SaveMenuItem.Text = "Save";
+            this.SaveMenuItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
             // LoadMenuItem
             // 
             this.LoadMenuItem.Text = "Load";
+            this.LoadMenuItem.Click += new System.EventHandler(this.LoadMenuItem_Click);
             // 
             // menuItem9
             // 

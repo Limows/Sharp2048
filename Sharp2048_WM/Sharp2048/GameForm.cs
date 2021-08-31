@@ -27,8 +27,6 @@ namespace Sharp2048
 
         public void NewGame()
         {
-            Parameters.IsGame = true;
-
             Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
@@ -310,6 +308,20 @@ namespace Sharp2048
         private void NewGameMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
+        }
+
+        private void SaveMenuItem_Click(object sender, EventArgs e)
+        {
+            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, "Save.dat");
+        }
+
+        private void LoadMenuItem_Click(object sender, EventArgs e)
+        {
+            Init(out Parameters.GameMatrix, 4);
+            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, "Save.dat");
+
+            DrawGame(Parameters.GameMatrix);
+            UpdateScore(0);
         }
     }
 }
