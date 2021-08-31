@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace Sharp2048
 {
@@ -45,7 +45,7 @@ namespace Sharp2048
                 byte[] array = new byte[Stream.Length];
 
                 Stream.Read(array, 0, array.Length);
-                string MatrixString = System.Text.Encoding.Default.GetString(array);
+                string MatrixString = System.Text.Encoding.Default.GetString(array, 0, array.Length);
 
                 Score = Convert.ToInt32(MatrixString.Split('\n')[1]);
 

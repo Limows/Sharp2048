@@ -10,12 +10,26 @@ namespace Sharp2048
     {
         public static int FieldSize = 4;
         public static int[,] GameMatrix;
-        public static bool IsGame = true;
         public static bool IsMove = false;
         public static Brush NumberBrush;
         public static Brush TextBrush = new SolidBrush(Color.Black);
         public static Font TextFont = new Font("Impact", 13, FontStyle.Regular);
         public static int Score = 0;
         public static Bitmap GameField;
+        public static int StartX = 0;
+        public static int StartY = 0;
+
+        public enum PalleteType
+        {
+            Square,
+            Rounded
+        }
+
+        public struct Settings
+        {
+            int HighScore;
+            PalleteType Pallete;
+            int FieldSize;
+        }
     }
 }

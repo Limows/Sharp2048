@@ -27,8 +27,6 @@ namespace Sharp2048
 
         public void NewGame()
         {
-            Parameters.IsGame = true;
-
             Init(out Parameters.GameMatrix, Parameters.FieldSize);
 
             StartGame();
@@ -194,7 +192,6 @@ namespace Sharp2048
                             {
                                 Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j];
                                 Parameters.GameMatrix[i + k - 1, j] = 0;
-
                                 Parameters.IsMove = true;
                             }
                             else
@@ -203,7 +200,6 @@ namespace Sharp2048
                                 {
                                     Parameters.GameMatrix[i + k, j] = Parameters.GameMatrix[i + k - 1, j]*2;
                                     Parameters.GameMatrix[i + k - 1, j] = 0;
-
                                     Parameters.IsMove = true;
 
                                     UpdateScore(Parameters.GameMatrix[i + k, j]);
@@ -312,6 +308,122 @@ namespace Sharp2048
         private void NewGameMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
+        }
+
+        private void SaveMenuItem_Click(object sender, EventArgs e)
+        {
+            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, "Save.dat");
+        }
+
+        private void LoadMenuItem_Click(object sender, EventArgs e)
+        {
+            Init(out Parameters.GameMatrix, 4);
+            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, "Save.dat");
+
+            DrawGame(Parameters.GameMatrix);
+            UpdateScore(0);
+        }
+
+        private void GameForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parameters.StartX = e.X;
+            Parameters.StartY = e.Y;
+        }
+
+        private void GameForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            int StopX = e.X;
+            int StopY = e.Y;
+            Parameters.IsMove = false;
+
+            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
+            {
+                if (Parameters.StartY > StopY)
+                {
+                    SlideUp();
+                }
+                else
+                {
+                    SlideDown();
+                }
+            }
+            else
+            {
+                if (Parameters.StartX > StopX)
+                {
+                    SlideLeft();
+                }
+                else
+                {
+                    SlideRight();
+                }
+            }
+
+            if (Parameters.IsMove)
+            {
+                AddNumber(2);
+            }
+            else
+            {
+                if (CheckEndGame())
+                {
+                    MessageBox.Show("Game Over!");
+                    NewGame();
+                }
+            }
+
+            DrawGame(Parameters.GameMatrix);
+        }
+
+        private void GameFieldBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            Parameters.StartX = e.X;
+            Parameters.StartY = e.Y;
+        }
+
+        private void GameFieldBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            int StopX = e.X;
+            int StopY = e.Y;
+            Parameters.IsMove = false;
+
+            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
+            {
+                if (Parameters.StartY > StopY)
+                {
+                    SlideUp();
+                }
+                else
+                {
+                    SlideDown();
+                }
+            }
+            else
+            {
+                if (Parameters.StartX > StopX)
+                {
+                    SlideLeft();
+                }
+                else
+                {
+                    SlideRight();
+                }
+            }
+
+            if (Parameters.IsMove)
+            {
+                AddNumber(2);
+            }
+            else
+            {
+                if (CheckEndGame())
+                {
+                    MessageBox.Show("Game Over!");
+                    NewGame();
+                }
+            }
+
+            DrawGame(Parameters.GameMatrix);
         }
     }
 }
