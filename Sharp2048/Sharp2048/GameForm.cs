@@ -17,8 +17,6 @@ namespace Sharp2048
 
             IOHelper.ReadSettings();
 
-            SetupGame(Parameters.FieldSize);
-
             NewGame();
         }
 
@@ -44,11 +42,6 @@ namespace Sharp2048
             }
 
             Parameters.NumberBrush = new SolidBrush(NumberColor);
-        }
-
-        public void SetupGame(int FieldSize)
-        {
-            Parameters.FieldSize = FieldSize;
         }
 
         public void NewGame()

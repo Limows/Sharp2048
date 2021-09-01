@@ -15,14 +15,9 @@ namespace Sharp2048
         {
             InitializeComponent();
 
-            SetupGame(4);
+            IOHelper.ReadSettings();
 
             NewGame();
-        }
-
-        public void SetupGame(int FieldSize)
-        {
-            Parameters.FieldSize = FieldSize;
         }
 
         public void NewGame()
@@ -38,8 +33,8 @@ namespace Sharp2048
         {
             Random RandomX = new Random();
             Random RandomY = new Random();
-            int x = RandomX.Next(4);
-            int y = RandomY.Next(4);
+            int x = RandomX.Next(Parameters.FieldSize);
+            int y = RandomY.Next(Parameters.FieldSize);
 
             Parameters.GameMatrix[x, y] = 2;
 
@@ -103,8 +98,8 @@ namespace Sharp2048
             {
                 Random RandomX = new Random(RandomInit.Next());
                 Random RandomY = new Random(RandomInit.Next());
-                x = RandomX.Next(4);
-                y = RandomY.Next(4);
+                x = RandomX.Next(Parameters.FieldSize);
+                y = RandomY.Next(Parameters.FieldSize);
             }
             while (CheckCollision(x, y));
 
@@ -147,7 +142,13 @@ namespace Sharp2048
                     {
                         SetColor(GameMatrix[i, j]);
 
-                        Rectangle NumberRect = new Rectangle(i * GameFieldBox.Width / 4 + 3, j * GameFieldBox.Height / 4 + 3, GameFieldBox.Width / 4 - 6, GameFieldBox.Height / 4 - 6);
+                        Rectangle NumberRect = new Rectangle
+                        (
+                            i * GameFieldBox.Width / Parameters.FieldSize + 3,
+                            j * GameFieldBox.Height / Parameters.FieldSize + 3,
+                            GameFieldBox.Width / Parameters.FieldSize - 6,
+                            GameFieldBox.Height / Parameters.FieldSize - 6
+                        );
 
                         DrawNumber(Paint, GameMatrix[i, j], NumberRect);
                     }
@@ -358,7 +359,7 @@ namespace Sharp2048
             int StopY = e.Y;
             Parameters.IsMove = false;
 
-            if (Math.Abs(Parameters.StartX - StopX) > 100 || Math.Abs(Parameters.StartY - StopY) > 100)
+            if (Math.Abs(Parameters.StartX - StopX) > 50 || Math.Abs(Parameters.StartY - StopY) > 50)
             {
                 if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
                 {
