@@ -10,7 +10,7 @@
 ## Used projects
 
  - [IniParser] library
- - [2048] game repository
+ - EXL [2048] game repository
 
 ## Contributing
 
