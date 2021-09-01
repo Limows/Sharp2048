@@ -1,4 +1,4 @@
-#Sharp2048 for Windows
+# Sharp2048 for Windows
 
 ## Assembly
 

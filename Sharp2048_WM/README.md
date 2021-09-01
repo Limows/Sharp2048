@@ -1,4 +1,4 @@
-#Sharp2048 for Windows Mobile
+# Sharp2048 for Windows Mobile
 
 ## Assembly
 
