@@ -125,6 +125,8 @@ namespace Sharp2048
 
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
             Parameters.Score = 0;
+
+            UpdateScore(0);
         }
 
         public void DrawGame(int[,] GameMatrix)
@@ -326,87 +328,59 @@ namespace Sharp2048
 
         private void GameForm_MouseDown(object sender, MouseEventArgs e)
         {
-            Parameters.StartX = e.X;
-            Parameters.StartY = e.Y;
+            TouchMove_Start(e);
         }
 
         private void GameForm_MouseUp(object sender, MouseEventArgs e)
         {
-            int StopX = e.X;
-            int StopY = e.Y;
-            Parameters.IsMove = false;
-
-            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
-            {
-                if (Parameters.StartY > StopY)
-                {
-                    SlideUp();
-                }
-                else
-                {
-                    SlideDown();
-                }
-            }
-            else
-            {
-                if (Parameters.StartX > StopX)
-                {
-                    SlideLeft();
-                }
-                else
-                {
-                    SlideRight();
-                }
-            }
-
-            if (Parameters.IsMove)
-            {
-                AddNumber(2);
-            }
-            else
-            {
-                if (CheckEndGame())
-                {
-                    MessageBox.Show("Game Over!");
-                    NewGame();
-                }
-            }
-
-            DrawGame(Parameters.GameMatrix);
+            TouchMove_Stop(e);
         }
 
         private void GameFieldBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            TouchMove_Start(e);
+        }
+
+        private void GameFieldBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            TouchMove_Stop(e);
+        }
+
+        private void TouchMove_Start(MouseEventArgs e)
         {
             Parameters.StartX = e.X;
             Parameters.StartY = e.Y;
         }
 
-        private void GameFieldBox_MouseUp(object sender, MouseEventArgs e)
+        private void TouchMove_Stop(MouseEventArgs e)
         {
             int StopX = e.X;
             int StopY = e.Y;
             Parameters.IsMove = false;
 
-            if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
+            if (Math.Abs(Parameters.StartX - StopX) > 100 || Math.Abs(Parameters.StartY - StopY) > 100)
             {
-                if (Parameters.StartY > StopY)
+                if (Math.Abs(Parameters.StartX - StopX) < Math.Abs(Parameters.StartY - StopY))
                 {
-                    SlideUp();
+                    if (Parameters.StartY > StopY)
+                    {
+                        SlideUp();
+                    }
+                    else
+                    {
+                        SlideDown();
+                    }
                 }
                 else
                 {
-                    SlideDown();
-                }
-            }
-            else
-            {
-                if (Parameters.StartX > StopX)
-                {
-                    SlideLeft();
-                }
-                else
-                {
-                    SlideRight();
+                    if (Parameters.StartX > StopX)
+                    {
+                        SlideLeft();
+                    }
+                    else
+                    {
+                        SlideRight();
+                    }
                 }
             }
 
