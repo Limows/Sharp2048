@@ -70,19 +70,19 @@ namespace Sharp2048
 
             switch (Number)
             {
-                case 0: NumberColor = Color.DarkGray; break;
-                case 2: NumberColor = Color.Ivory; break;
-                case 4: NumberColor = Color.Beige; break;
-                case 8: NumberColor = Color.Coral; break;
-                case 16: NumberColor = Color.Orange; break;
-                case 32: NumberColor = Color.DarkOrange; break;
-                case 64: NumberColor = Color.Red; break;
-                case 128: NumberColor = Color.BlanchedAlmond; break;
-                case 256: NumberColor = Color.Khaki; break;
-                case 512: NumberColor = Color.Yellow; break;
-                case 1024: NumberColor = Color.Gold; break;
-                case 2048: NumberColor = Color.Gold; break;
-                default: NumberColor = Color.Gray; break;
+                case 0: NumberColor = Color.FromArgb(204, 192, 179); break;
+                case 2: NumberColor = Color.FromArgb(238, 228, 218); break;
+                case 4: NumberColor = Color.FromArgb(237, 224, 200); break;
+                case 8: NumberColor = Color.FromArgb(242, 177, 121); break;
+                case 16: NumberColor = Color.FromArgb(245, 149, 99); break;
+                case 32: NumberColor = Color.FromArgb(246, 124, 95); break;
+                case 64: NumberColor = Color.FromArgb(246, 94, 59); break;
+                case 128: NumberColor = Color.FromArgb(237, 207, 114); break;
+                case 256: NumberColor = Color.FromArgb(237, 204, 97); break;
+                case 512: NumberColor = Color.FromArgb(237, 200, 80); break;
+                case 1024: NumberColor = Color.FromArgb(237, 197, 63); break;
+                case 2048: NumberColor = Color.FromArgb(237, 194, 46); break;
+                default: NumberColor = Color.FromArgb(204, 192, 179); break;
             }
 
             Parameters.NumberBrush = new SolidBrush(NumberColor);
@@ -132,7 +132,8 @@ namespace Sharp2048
 
             using (Graphics Paint = Graphics.FromImage(GameFieldBox.Image))
             {
-                Paint.Clear(Color.Gray);
+                Paint.Clear(Color.FromArgb(187, 173, 160));
+                this.BackColor = Color.FromArgb(187, 173, 160);
 
                 for (int i = 0; i < n; i++)
                 {
