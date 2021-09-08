@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Reflection;
+﻿using IniParser;
+using System;
 using System.IO;
-using System.Runtime.InteropServices;
-using IniParser;
+using System.Reflection;
+using System.Text;
 
 
 namespace Sharp2048
