@@ -5,7 +5,7 @@ using System.Threading;
 using System.Reflection;
 using System.IO;
 using System.Runtime.InteropServices;
-//using IniParser;
+using IniParser;
 
 namespace Sharp2048
 {
@@ -88,7 +88,7 @@ namespace Sharp2048
             {
                 Parameters.ConfigPath = IOHelper.GetConfigPath();
             }
-            /*
+
             var Parser = new FileIniDataParser();
             var Config = Parser.ReadFile(Parameters.ConfigPath);
 
@@ -106,7 +106,7 @@ namespace Sharp2048
                 default:
                     Parameters.Pallete = Parameters.PalleteType.Square;
                     break;
-            }*/
+            }
         }
     }
 }
