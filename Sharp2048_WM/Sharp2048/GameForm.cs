@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -164,7 +165,20 @@ namespace Sharp2048
             sf.LineAlignment = StringAlignment.Center;
             sf.Alignment = StringAlignment.Center;
 
-            Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+            Paint.SmoothingMode = SmoothingMode.AntiAlias;
+
+            if (Parameters.Pallete == Parameters.PalleteType.Rounded)
+            {
+                //using (GraphicsPath path = Drawing.RoundedRect(NumberRect, 6))
+                //{
+                //    Paint.FillPath(Parameters.NumberBrush, path);
+                //}
+                Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+            }
+            else
+            {
+                Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+            }
 
             if (Number > 0)
             {
