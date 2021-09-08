@@ -26,12 +26,5 @@ namespace Sharp2048
             Square,
             Rounded
         }
-
-        public struct Settings
-        {
-            int HighScore;
-            PalleteType Pallete;
-            int FieldSize;
-        }
     }
 }
