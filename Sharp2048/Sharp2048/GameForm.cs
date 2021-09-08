@@ -261,10 +261,11 @@ namespace Sharp2048
             sf.LineAlignment = StringAlignment.Center;
             sf.Alignment = StringAlignment.Center;
 
+            Paint.SmoothingMode = SmoothingMode.AntiAlias;
 
             if (Parameters.Pallete == Parameters.PalleteType.Rounded)
             {
-                using (GraphicsPath path = Drawing.RoundedRect(NumberRect, 10))
+                using (GraphicsPath path = Drawing.RoundedRect(NumberRect, 6))
                 {
                     Paint.FillPath(Parameters.NumberBrush, path);
                 }
