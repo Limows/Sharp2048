@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Reflection;
+﻿using IniParser;
+using System;
 using System.IO;
-using System.Runtime.InteropServices;
-using IniParser;
+using System.Reflection;
+using System.Text;
 
 
 namespace Sharp2048
@@ -96,7 +93,7 @@ namespace Sharp2048
             Parameters.HighScore = Convert.ToInt32(Config["Game"]["HighScore"]);
             Parameters.FieldSize = Convert.ToInt32(Config["Field"]["Size"]);
 
-            switch (Config["Pallete"]["Type"])
+            switch (Config["Palletes"]["Type"])
             {
                 case "Square":
                     Parameters.Pallete = Parameters.PalleteType.Square;
