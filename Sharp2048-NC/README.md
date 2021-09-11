@@ -1,4 +1,4 @@
-# Sharp2048 for Windows
+# Sharp2048 .Net Core version
 
 ## Assembly
 
@@ -6,21 +6,18 @@ You need the following stuff to build this program:
 
  - Visual Studio 2019
  - [IniParser]
-
-You also need to rebild IniParser for Windows Mobile before using.
  
 ## Installation
 
 You need the following stuff to install this program:
 
- - Microsoft .Net Framework 3.5
+ - Microsoft .Net Core for Windows or Linux
 
 ## OS Support
 
- - Windows XP
- - Windows Vista
  - Windows 7
  - Windows 10
  - Windows 11
+ - Linux
 
  [IniParser]: https://github.com/rickyah/ini-parser

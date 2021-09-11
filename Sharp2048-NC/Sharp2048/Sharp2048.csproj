@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Sharp2048</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Version>1.2.2</Version>
+    <Authors>LimSoft</Authors>
+    <ApplicationIcon>Sharp2048.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GameLogic\GameLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

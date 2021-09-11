@@ -60,5 +60,58 @@ namespace Sharp2048
 
             Parameters.NumberBrush = new SolidBrush(NumberColor);
         }
+
+        public static void DrawGame(Graphics Paint, ref int[,] GameMatrix, Rectangle FieldRect)
+        {
+            int n = GameMatrix.GetLength(0);
+
+            Paint.Clear(Color.FromArgb(187, 173, 160));
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        SetColor(GameMatrix[i, j]);
+
+                        Rectangle NumberRect = new Rectangle
+                        (   
+                            i * FieldRect.Width / Parameters.FieldSize + 3,
+                            j * FieldRect.Height / Parameters.FieldSize + 3,
+                            FieldRect.Width / Parameters.FieldSize - 6,
+                            FieldRect.Height / Parameters.FieldSize - 6
+                        );
+
+                        DrawNumber(Paint, GameMatrix[i, j], NumberRect);
+                    }
+                }
+        }
+        public static void DrawNumber(Graphics Paint, int Number, Rectangle NumberRect)
+        {
+            RectangleF TextLayout = new RectangleF(NumberRect.X, NumberRect.Y, NumberRect.Width, NumberRect.Height);
+            StringFormat sf = new StringFormat
+            {
+                LineAlignment = StringAlignment.Center,
+                Alignment = StringAlignment.Center
+            };
+
+            Paint.SmoothingMode = SmoothingMode.AntiAlias;
+
+            if (Parameters.Pallete == Parameters.PalleteType.Rounded)
+            {
+                using (GraphicsPath path = Drawing.RoundedRect(NumberRect, 6))
+                {
+                    Paint.FillPath(Parameters.NumberBrush, path);
+                }
+            }
+            else
+            {
+                Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+            }
+
+            if (Number > 0)
+            {
+                Paint.DrawString(Number.ToString(), Parameters.TextFont, Parameters.TextBrush, TextLayout, sf);
+            }
+        }
     }
 }
