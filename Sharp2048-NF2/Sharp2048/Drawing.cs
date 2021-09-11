@@ -85,6 +85,7 @@ namespace Sharp2048
                     }
                 }
         }
+		
         public static void DrawNumber(Graphics Paint, int Number, Rectangle NumberRect)
         {
             RectangleF TextLayout = new RectangleF(NumberRect.X, NumberRect.Y, NumberRect.Width, NumberRect.Height);
