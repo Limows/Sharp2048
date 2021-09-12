@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.IO;
 
-namespace LimFTPClient
+namespace Sharp2048
 {
     public partial class AboutBox : Form
     {

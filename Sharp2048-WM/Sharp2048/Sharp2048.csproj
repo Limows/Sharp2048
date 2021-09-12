@@ -63,6 +63,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonatBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonatBox.Designer.cs">
+      <DependentUpon>DonatBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drawing.cs" />
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
@@ -74,6 +86,14 @@
     <Compile Include="Parameters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DonatBox.resx">
+      <DependentUpon>DonatBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
       <SubType>Designer</SubType>

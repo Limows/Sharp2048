@@ -18,7 +18,6 @@ namespace Sharp2048
             InitializeComponent();
 
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
-            this.BackColor = Color.FromArgb(187, 173, 160);
 
             IOHelper.ReadSettings();
 
@@ -189,6 +188,20 @@ namespace Sharp2048
             }
 
             UpdateScreen();
+        }
+
+        private void DonatMenuItem_Click(object sender, EventArgs e)
+        {
+            DonatBox Donat = new DonatBox();
+
+            Donat.ShowDialog();
+        }
+
+        private void AboutMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox About = new AboutBox();
+
+            About.ShowDialog();
         }
     }
 }

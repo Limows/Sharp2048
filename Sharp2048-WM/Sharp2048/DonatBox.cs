@@ -13,9 +13,6 @@ namespace Sharp2048
         public DonatBox()
         {
             InitializeComponent();
-
-            this.Text = String.Format("Donat");
-            this.BackColor = Color.FromArgb(187, 173, 160);
         }
 
         private void OKButton_Click(object sender, EventArgs e)

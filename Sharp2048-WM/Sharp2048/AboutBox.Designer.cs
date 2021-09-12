@@ -1,4 +1,4 @@
-﻿namespace LimFTPClient
+﻿namespace Sharp2048
 {
     partial class AboutBox
     {
@@ -77,7 +77,7 @@
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(161, 239);
+            this.OKButton.Location = new System.Drawing.Point(86, 239);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(72, 20);
             this.OKButton.TabIndex = 12;
@@ -89,7 +89,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
             this.ClientSize = new System.Drawing.Size(240, 268);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.textBoxDescription);
