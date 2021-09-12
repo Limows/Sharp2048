@@ -104,5 +104,19 @@ namespace Sharp2048
 
             UpdateScreen();
         }
+
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox About = new AboutBox();
+
+            About.ShowDialog();
+        }
+
+        private void DonatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DonatBox Donat = new DonatBox();
+
+            Donat.ShowDialog();
+        }
     }
 }
