@@ -114,7 +114,7 @@ namespace Sharp2048
 
         private void DonatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DonatBox Donat = new DonatBox();
+            DonateBox Donat = new DonateBox();
 
             Donat.ShowDialog();
         }

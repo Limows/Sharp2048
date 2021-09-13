@@ -8,6 +8,9 @@
     <Version>1.2.2</Version>
     <Authors>LimSoft</Authors>
     <ApplicationIcon>Sharp2048.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>LimSharpKeys.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>

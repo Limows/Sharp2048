@@ -41,11 +41,11 @@ namespace Sharp2048
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.DonatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ScoreLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.GameFieldBox = new System.Windows.Forms.PictureBox();
-            this.DonatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameFieldBox)).BeginInit();
@@ -88,7 +88,7 @@ namespace Sharp2048
             // 
             this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
             this.setupToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.setupToolStripMenuItem.Text = "Setup";
+            this.setupToolStripMenuItem.Text = "Settings";
             // 
             // toolStripSeparator2
             // 
@@ -134,9 +134,21 @@ namespace Sharp2048
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(104, 6);
+            // 
+            // DonatToolStripMenuItem
+            // 
+            this.DonatToolStripMenuItem.Name = "DonatToolStripMenuItem";
+            this.DonatToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.DonatToolStripMenuItem.Text = "Donate";
+            this.DonatToolStripMenuItem.Click += new System.EventHandler(this.DonatToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -165,22 +177,10 @@ namespace Sharp2048
             this.GameFieldBox.TabIndex = 8;
             this.GameFieldBox.TabStop = false;
             // 
-            // DonatToolStripMenuItem
-            // 
-            this.DonatToolStripMenuItem.Name = "DonatToolStripMenuItem";
-            this.DonatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.DonatToolStripMenuItem.Text = "Donat";
-            this.DonatToolStripMenuItem.Click += new System.EventHandler(this.DonatToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
-            // 
             // GameForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
             this.ClientSize = new System.Drawing.Size(222, 272);
             this.Controls.Add(this.GameFieldBox);
             this.Controls.Add(this.statusStrip1);

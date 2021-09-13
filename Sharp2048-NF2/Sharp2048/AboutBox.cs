@@ -20,7 +20,6 @@ namespace Sharp2048
             this.labelBuild.Text = String.Format("Build date: {0}", AssemblyBuildDate);
             this.labelCompanyName.Text = String.Format("Athor: {0}", AssemblyCompany);
             this.textBoxDescription.Text = String.Format("{0}\r\nContacts:\r\neMail - {1}\r\nTelegram - {2}", AssemblyDescription, "Limowski256@gmail.com", "@Limows");
-            this.BackColor = Color.FromArgb(187, 173, 160);
         }
 
         public string AssemblyTitle

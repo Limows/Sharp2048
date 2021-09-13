@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelBuild = new System.Windows.Forms.Label();
@@ -73,29 +72,39 @@
             // textBoxDescription
             // 
             this.textBoxDescription.AcceptsReturn = true;
+            this.textBoxDescription.BackColor = System.Drawing.Color.White;
             this.textBoxDescription.Location = new System.Drawing.Point(7, 100);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.Size = new System.Drawing.Size(226, 133);
+            this.textBoxDescription.Size = new System.Drawing.Size(210, 133);
             this.textBoxDescription.TabIndex = 7;
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(87, 239);
+            this.OKButton.BackColor = System.Drawing.Color.White;
+            this.OKButton.Location = new System.Drawing.Point(78, 239);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(72, 20);
+            this.OKButton.Size = new System.Drawing.Size(72, 25);
             this.OKButton.TabIndex = 12;
             this.OKButton.Text = "OK";
+            this.OKButton.UseVisualStyleBackColor = false;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(200, 24);
+            this.MainMenu.TabIndex = 0;
             // 
             // AboutBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(240, 268);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
+            this.ClientSize = new System.Drawing.Size(224, 281);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.labelCompanyName);
