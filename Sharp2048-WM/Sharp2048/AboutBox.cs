@@ -15,11 +15,11 @@ namespace Sharp2048
         {
             InitializeComponent();
 
-            this.Text = String.Format("О программе");
+            this.Text = String.Format("About");
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
-            this.labelBuild.Text = String.Format("Сборка от {0}", AssemblyBuildDate);
-            this.labelCompanyName.Text = String.Format("Автор {0}", AssemblyCompany);
+            this.labelVersion.Text = String.Format("Version: {0}", AssemblyVersion);
+            this.labelBuild.Text = String.Format("Build date: {0}", AssemblyBuildDate);
+            this.labelCompanyName.Text = String.Format("Author: {0}", AssemblyCompany);
             this.textBoxDescription.Text = String.Format("{0}\r\nContacts:\r\neMail - {1}\r\nTelegram - {2}", AssemblyDescription, "Limowski256@gmail.com", "@Limows");
         }
 
@@ -52,7 +52,6 @@ namespace Sharp2048
         {   
             get
             {
-                //return File.GetCreationTime(Assembly.GetExecutingAssembly().GetName().CodeBase).ToString("dd.MM.yy");
                 string filePath = System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase;
                 const int c_PeHeaderOffset = 60;
                 const int c_LinkerTimestampOffset = 8;
@@ -133,7 +132,7 @@ namespace Sharp2048
             }
         }
 
-        private void OKButton_Click(object sender, EventArgs e)
+        private void OKMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }

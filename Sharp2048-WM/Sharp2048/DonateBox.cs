@@ -8,14 +8,14 @@ using System.IO;
 
 namespace Sharp2048
 {
-    public partial class DonatBox : Form
+    public partial class DonateBox : Form
     {
-        public DonatBox()
+        public DonateBox()
         {
             InitializeComponent();
         }
 
-        private void OKButton_Click(object sender, EventArgs e)
+        private void OkMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }

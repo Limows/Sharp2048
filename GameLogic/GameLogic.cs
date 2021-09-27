@@ -149,8 +149,8 @@ namespace GameLogic
             int n = GameMatrix.GetLength(0);
             Random RandomX = new Random();
             Random RandomY = new Random();
-            int x = RandomX.Next(4);
-            int y = RandomY.Next(4);
+            int x = RandomX.Next(n);
+            int y = RandomY.Next(n);
 
             GameMatrix[x, y] = 2;
 

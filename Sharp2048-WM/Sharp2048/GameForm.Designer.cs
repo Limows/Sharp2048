@@ -32,6 +32,7 @@
             this.MainMenu = new System.Windows.Forms.MainMenu();
             this.GameMenuItem = new System.Windows.Forms.MenuItem();
             this.NewGameMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.SetupMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem10 = new System.Windows.Forms.MenuItem();
             this.SaveMenuItem = new System.Windows.Forms.MenuItem();
@@ -40,11 +41,10 @@
             this.QuitMenuItem = new System.Windows.Forms.MenuItem();
             this.HelpMenuItem = new System.Windows.Forms.MenuItem();
             this.AboutMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.DonatMenuItem = new System.Windows.Forms.MenuItem();
             this.ScoreBar = new System.Windows.Forms.StatusBar();
             this.GameFieldBox = new System.Windows.Forms.PictureBox();
-            this.DonatMenuItem = new System.Windows.Forms.MenuItem();
-            this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -69,9 +69,14 @@
             this.NewGameMenuItem.Text = "New Game";
             this.NewGameMenuItem.Click += new System.EventHandler(this.NewGameMenuItem_Click);
             // 
+            // menuItem2
+            // 
+            this.menuItem2.Text = "-";
+            // 
             // SetupMenuItem
             // 
             this.SetupMenuItem.Text = "Settings";
+            this.SetupMenuItem.Click += new System.EventHandler(this.SetupMenuItem_Click);
             // 
             // menuItem10
             // 
@@ -108,6 +113,15 @@
             this.AboutMenuItem.Text = "About";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
+            // menuItem3
+            // 
+            this.menuItem3.Text = "-";
+            // 
+            // DonatMenuItem
+            // 
+            this.DonatMenuItem.Text = "Donat";
+            this.DonatMenuItem.Click += new System.EventHandler(this.DonatMenuItem_Click);
+            // 
             // ScoreBar
             // 
             this.ScoreBar.Location = new System.Drawing.Point(0, 246);
@@ -123,19 +137,6 @@
             this.GameFieldBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GameFieldBox_MouseDown);
             this.GameFieldBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GameFieldBox_MouseUp);
             // 
-            // DonatMenuItem
-            // 
-            this.DonatMenuItem.Text = "Donat";
-            this.DonatMenuItem.Click += new System.EventHandler(this.DonatMenuItem_Click);
-            // 
-            // menuItem2
-            // 
-            this.menuItem2.Text = "-";
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Text = "-";
-            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -150,6 +151,7 @@
             this.Text = "2048";
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseDown);
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.GameForm_Closing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
             this.ResumeLayout(false);
 

@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="QRBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAYAAAB1PADUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAlBSURBVHhe7ZJBimxJDMT+/S89s02EKRGEs7qhU6BVhJ2u
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAlBSURBVHhe7ZJBimxJDMT+/S89s02EKRGEs7qhU6BVhJ2u
         4v377/FY5H1Qj1XeB/VY5X1Qj1XeB/VY5X1Qj1XeB/VY5X1Qj1XeB/VY5X1Qj1XeB/VY5X1Qj1XeB/VY
         5X1Qj1XeB/VY5X1Qj1XqD+rfv39flUydT5I2J+ybxjRz05Z6w3TUTcnU+SRpc8K+aUwzN22pN0xH3ZRM
         nU+SNifsm8Y0c9OWesN01E3J1PkkaXPCvmlMMzdtqTdsH0RsP3N6G3vPcqOdN7b31xu2DyK2nzm9jb1n
@@ -167,6 +164,9 @@
         im7snwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>POCKET_PC_2003_PORTRAIT</value>
   </metadata>

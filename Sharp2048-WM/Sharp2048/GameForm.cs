@@ -21,7 +21,14 @@ namespace Sharp2048
 
             IOHelper.ReadSettings();
 
-            NewGame();
+            try
+            {
+                LoadGame();
+            }
+            catch
+            {
+                NewGame();
+            }
         }
 
         public void NewGame()
@@ -29,6 +36,16 @@ namespace Sharp2048
             GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
 
             GameLogic.GameLogic.StartGame(ref Parameters.GameMatrix);
+
+            UpdateScreen();
+        }
+
+        public void LoadGame()
+        {
+            GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
+            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, Parameters.SavePath);
+
+            ScoreBar.Text = "Score: " + Parameters.Score;
 
             UpdateScreen();
         }
@@ -97,17 +114,19 @@ namespace Sharp2048
 
         private void SaveMenuItem_Click(object sender, EventArgs e)
         {
-            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, "Save.dat");
+            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, Parameters.SavePath);
         }
 
         private void LoadMenuItem_Click(object sender, EventArgs e)
         {
-            GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
-            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, "Save.dat");
-
-            ScoreBar.Text = "Score: " + Parameters.Score;
-
-            UpdateScreen();
+            try
+            {
+                LoadGame();
+            }
+            catch
+            {
+                MessageBox.Show("No save file :(");
+            }
         }
 
         private void GameForm_MouseDown(object sender, MouseEventArgs e)
@@ -192,9 +211,9 @@ namespace Sharp2048
 
         private void DonatMenuItem_Click(object sender, EventArgs e)
         {
-            DonatBox Donat = new DonatBox();
+            DonateBox Donate = new DonateBox();
 
-            Donat.ShowDialog();
+            Donate.ShowDialog();
         }
 
         private void AboutMenuItem_Click(object sender, EventArgs e)
@@ -202,6 +221,21 @@ namespace Sharp2048
             AboutBox About = new AboutBox();
 
             About.ShowDialog();
+        }
+
+        private void SetupMenuItem_Click(object sender, EventArgs e)
+        {
+            OptionsForm Options = new OptionsForm();
+
+            Options.ShowDialog();
+
+            NewGame();
+        }
+
+        private void GameForm_Closing(object sender, CancelEventArgs e)
+        {
+            IOHelper.WriteSettings();
+            IOHelper.WriteGame(Parameters.GameMatrix, Parameters.Score, Parameters.SavePath);
         }
     }
 }
