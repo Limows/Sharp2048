@@ -65,7 +65,19 @@ namespace Sharp2048
 
         public static void WriteSettings()
         {
+            if (String.IsNullOrEmpty(Parameters.ConfigPath))
+            {
+                Parameters.ConfigPath = IOHelper.GetConfigPath();
+            }
 
+            var Parser = new FileIniDataParser();
+            var Config = new IniParser.Model.IniData();
+
+            Config["Game"]["HighScore"] = Convert.ToString(Parameters.HighScore);
+            Config["Field"]["Size"] = Convert.ToString(Parameters.FieldSize);
+            Config["Palletes"]["Type"] = Parameters.Pallete == Parameters.PalleteType.Square ? "Square" : "Rounded";
+
+            Parser.WriteFile(Parameters.ConfigPath, Config, Encoding.Default);
         }
 
         static private string GetConfigPath()

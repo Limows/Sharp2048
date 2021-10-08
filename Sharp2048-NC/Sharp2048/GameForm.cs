@@ -118,5 +118,14 @@ namespace Sharp2048
 
             Donat.ShowDialog();
         }
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OptionsForm Options = new OptionsForm();
+
+            Options.ShowDialog();
+
+            NewGame();
+        }
     }
 }
