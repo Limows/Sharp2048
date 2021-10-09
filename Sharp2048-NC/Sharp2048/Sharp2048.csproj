@@ -5,12 +5,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Sharp2048</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>1.2.2</Version>
+    <Version>1.3.0</Version>
     <Authors>LimSoft</Authors>
     <ApplicationIcon>Sharp2048.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>LimSharpKeys.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
