@@ -167,7 +167,7 @@ namespace Sharp2048
                 {
                     if (Parameters.StartY > StopY)
                     {
-                        IsMove = GameLogic.GameLogic.SlideLeft(ref Parameters.GameMatrix, ref Parameters.Score);
+                        IsMove = GameLogic.GameLogic.SlideUp(ref Parameters.GameMatrix, ref Parameters.Score);
                     }
                     else
                     {
