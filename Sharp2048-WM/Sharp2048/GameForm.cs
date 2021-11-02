@@ -19,7 +19,7 @@ namespace Sharp2048
 
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
 
-            IOHelper.ReadSettings();
+            //IOHelper.ReadSettings();
 
             try
             {
@@ -167,7 +167,7 @@ namespace Sharp2048
                 {
                     if (Parameters.StartY > StopY)
                     {
-                        IsMove = GameLogic.GameLogic.SlideLeft(ref Parameters.GameMatrix, ref Parameters.Score);
+                        IsMove = GameLogic.GameLogic.SlideUp(ref Parameters.GameMatrix, ref Parameters.Score);
                     }
                     else
                     {

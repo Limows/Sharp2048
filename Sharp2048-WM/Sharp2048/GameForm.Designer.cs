@@ -42,7 +42,7 @@
             this.HelpMenuItem = new System.Windows.Forms.MenuItem();
             this.AboutMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.DonatMenuItem = new System.Windows.Forms.MenuItem();
+            this.DonateMenuItem = new System.Windows.Forms.MenuItem();
             this.ScoreBar = new System.Windows.Forms.StatusBar();
             this.GameFieldBox = new System.Windows.Forms.PictureBox();
             this.SuspendLayout();
@@ -105,7 +105,7 @@
             // 
             this.HelpMenuItem.MenuItems.Add(this.AboutMenuItem);
             this.HelpMenuItem.MenuItems.Add(this.menuItem3);
-            this.HelpMenuItem.MenuItems.Add(this.DonatMenuItem);
+            this.HelpMenuItem.MenuItems.Add(this.DonateMenuItem);
             this.HelpMenuItem.Text = "Help";
             // 
             // AboutMenuItem
@@ -117,10 +117,10 @@
             // 
             this.menuItem3.Text = "-";
             // 
-            // DonatMenuItem
+            // DonateMenuItem
             // 
-            this.DonatMenuItem.Text = "Donat";
-            this.DonatMenuItem.Click += new System.EventHandler(this.DonatMenuItem_Click);
+            this.DonateMenuItem.Text = "Donate";
+            this.DonateMenuItem.Click += new System.EventHandler(this.DonatMenuItem_Click);
             // 
             // ScoreBar
             // 
@@ -173,7 +173,7 @@
         private System.Windows.Forms.PictureBox GameFieldBox;
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem DonatMenuItem;
+        private System.Windows.Forms.MenuItem DonateMenuItem;
     }
 }
 
