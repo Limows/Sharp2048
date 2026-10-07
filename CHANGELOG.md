@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.3.1] - (07.10.26)
+
+ - Ported Net Core version to Net 8.0
+ - Various bug fixes
+
 ## [v1.3.0] - (09.10.21)
 
 ### Added

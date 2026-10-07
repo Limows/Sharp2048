@@ -175,19 +175,14 @@ namespace GameLogic
                         return 1;
                     }
 
-                    if (GameMatrix[i, j] == 2)
+                    if (i < n - 1 && GameMatrix[i + 1, j] == GameMatrix[i, j])
                     {
-                        if (i < n - 1 && GameMatrix[i + 1, j] == 2)
-                            return 0;
+                        return 0;
+                    }
 
-                        if (i > 1 && GameMatrix[i - 1, j] == 2)
-                            return 0;
-
-                        if (j < n - 1 && GameMatrix[i, j + 1] == 2)
-                            return 0;
-
-                        if (j > 1 && GameMatrix[i, j - 1] == 2)
-                            return 0;
+                    if (j < n - 1 && GameMatrix[i, j + 1] == GameMatrix[i, j])
+                    {
+                        return 0;
                     }
                 }
             }

@@ -64,8 +64,10 @@ namespace Sharp2048
             {
                 GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
             }
-            
-            switch(GameLogic.GameLogic.CheckEndGame(ref Parameters.GameMatrix))
+
+            UpdateScreen();
+
+            switch (GameLogic.GameLogic.CheckEndGame(ref Parameters.GameMatrix))
             {
                 case 1:
                     MessageBox.Show("You Win!");
@@ -76,8 +78,6 @@ namespace Sharp2048
                     NewGame();
                     break;
             }
-
-            UpdateScreen();
         }
 
         private void NewGameToolStripMenuItem_Click(object sender, EventArgs e)
