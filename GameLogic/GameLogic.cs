@@ -13,7 +13,7 @@ namespace GameLogic
 
             for (int j = 0; j < n; j++)
             {
-                for (int i = 2; i >= 0; i--)
+                for (int i = n - 1; i >= 0; i--)
                 {
                     if (GameMatrix[i, j] > 0)
                     {
