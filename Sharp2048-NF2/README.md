@@ -11,7 +11,7 @@ You need the following stuff to build this program:
 
 You need the following stuff to install this program:
 
- - Microsoft .Net Framework 2 or Mono
+ - Microsoft .Net Framework 2 or newer
 
 ## OS Support
 
@@ -21,8 +21,5 @@ You need the following stuff to install this program:
  - Windows XP
  - Windows Vista
  - Windows 7
- - Windows 10
- - Windows 11
- - Linux
 
  [IniParser]: https://github.com/rickyah/ini-parser
