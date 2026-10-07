@@ -18,7 +18,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Limows
 
 ## License
 
-This project is licensed under the terms of the [2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause).
+This project is licensed under the terms of the [3-Clause BSD License](https://opensource.org/license/bsd-3-clause).
 
 [IniParser]: https://github.com/rickyah/ini-parser
 [2048]: https://github.com/EXL/2048
