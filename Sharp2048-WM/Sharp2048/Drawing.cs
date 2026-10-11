@@ -32,10 +32,15 @@ namespace Sharp2048
             g.FillRectangle(brush, rect.Right - radius, rect.Y + radius, radius, rect.Height - d);
 
             // Четыре угла
-            g.FillPie(brush, rect.X, rect.Y, d, d, 180, 90);            // Верхний левый
-            g.FillPie(brush, rect.Right - d, rect.Y, d, d, 270, 90);    // Верхний правый
-            g.FillPie(brush, rect.X, rect.Bottom - d, d, d, 90, 90);    // Нижний левый
-            g.FillPie(brush, rect.Right - d, rect.Bottom - d, d, d, 0, 90); // Нижний правый
+            g.FillEllipse(brush, rect.X, rect.Y, d, d); // Верхний левый
+            g.FillEllipse(brush, rect.Right - d - 1, rect.Y, d, d); // Верхний правый
+            g.FillEllipse(brush, rect.X, rect.Bottom - d - 1, d, d); // Нижний левый
+            g.FillEllipse(brush, rect.Right - d - 1, rect.Bottom - d - 1, d, d); // Нижний правый
+
+            //g.FillPie(brush, rect.X, rect.Y, d, d, 180, 90);            
+            //g.FillPie(brush, rect.Right - d, rect.Y, d, d, 270, 90);    // Верхний правый
+            //g.FillPie(brush, rect.X, rect.Bottom - d, d, d, 90, 90);    // Нижний левый
+            //g.FillPie(brush, rect.Right - d, rect.Bottom - d, d, d, 0, 90); // Нижний правый
         }
 
         public static void SetColor(int Number)
@@ -98,7 +103,7 @@ namespace Sharp2048
 
             if (Parameters.Pallete == Parameters.PalleteType.Rounded)
             {
-                FillRoundedRectangle(Paint, Parameters.NumberBrush, NumberRect, 6);
+                FillRoundedRectangle(Paint, Parameters.NumberBrush, NumberRect, 10);
             }
             else
             {
