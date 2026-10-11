@@ -11,39 +11,32 @@ namespace Sharp2048
 {
     class Drawing
     {
-        /*
-        public static GraphicsPath RoundedRect(Rectangle bounds, int radius)
-        {
-            int diameter = radius * 2;
-            Size size = new Size(diameter, diameter);
-            Rectangle arc = new Rectangle(bounds.Location, size);
-            GraphicsPath path = new GraphicsPath();
 
-            if (radius == 0)
+        public static void FillRoundedRectangle(Graphics g, Brush brush, Rectangle rect, int radius)
+        {
+            if (radius <= 0 || rect.Width <= 0 || rect.Height <= 0)
             {
-                path.AddRectangle(bounds);
-                return path;
+                g.FillRectangle(brush, rect);
+                return;
             }
 
-            // top left arc  
-            path.AddArc(arc, 180, 90);
+            // Ограничиваем радиус, чтобы он не превышал половину размеров
+            radius = Math.Min(radius, Math.Min(rect.Width, rect.Height) / 2);
+            int d = radius * 2;
 
-            // top right arc  
-            arc.X = bounds.Right - diameter;
-            path.AddArc(arc, 270, 90);
+            // Центральный вертикальный прямоугольник
+            g.FillRectangle(brush, rect.X + radius, rect.Y, rect.Width - d, rect.Height);
 
-            // bottom right arc  
-            arc.Y = bounds.Bottom - diameter;
-            path.AddArc(arc, 0, 90);
+            // Левая и правая вертикальные полосы
+            g.FillRectangle(brush, rect.X, rect.Y + radius, radius, rect.Height - d);
+            g.FillRectangle(brush, rect.Right - radius, rect.Y + radius, radius, rect.Height - d);
 
-            // bottom left arc 
-            arc.X = bounds.Left;
-            path.AddArc(arc, 90, 90);
-
-            path.CloseFigure();
-            return path;
+            // Четыре угла
+            g.FillPie(brush, rect.X, rect.Y, d, d, 180, 90);            // Верхний левый
+            g.FillPie(brush, rect.Right - d, rect.Y, d, d, 270, 90);    // Верхний правый
+            g.FillPie(brush, rect.X, rect.Bottom - d, d, d, 90, 90);    // Нижний левый
+            g.FillPie(brush, rect.Right - d, rect.Bottom - d, d, d, 0, 90); // Нижний правый
         }
-        */
 
         public static void SetColor(int Number)
         {
@@ -105,11 +98,7 @@ namespace Sharp2048
 
             if (Parameters.Pallete == Parameters.PalleteType.Rounded)
             {
-                //using (GraphicsPath path = Drawing.RoundedRect(NumberRect, 6))
-                //{
-                //    Paint.FillPath(Parameters.NumberBrush, path);
-                //}
-                Paint.FillRectangle(Parameters.NumberBrush, NumberRect);
+                FillRoundedRectangle(Paint, Parameters.NumberBrush, NumberRect, 6);
             }
             else
             {
