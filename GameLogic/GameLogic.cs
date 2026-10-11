@@ -149,12 +149,21 @@ namespace GameLogic
             int n = GameMatrix.GetLength(0);
             Random RandomX = new Random();
             Random RandomY = new Random();
+            Random RandNumber = new Random();
             int x = RandomX.Next(n);
             int y = RandomY.Next(n);
+            int NextNumber = RandNumber.Next(100);
 
             GameMatrix[x, y] = 2;
 
-            AddNumber(2, ref GameMatrix);
+            if (NextNumber > 60)
+            {
+                AddNumber(4, ref GameMatrix);
+            }
+            else
+            {
+                AddNumber(2, ref GameMatrix);
+            }
         }
 
         public static int CheckEndGame(ref int[,] GameMatrix)

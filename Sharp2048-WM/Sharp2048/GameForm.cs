@@ -89,7 +89,17 @@ namespace Sharp2048
 
             if (IsMove)
             {
-                GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                Random RandNumber = new Random();
+                int NextNumber = RandNumber.Next(100);
+
+                if (NextNumber > 60)
+                {
+                    GameLogic.GameLogic.AddNumber(4, ref Parameters.GameMatrix);
+                }
+                else
+                {
+                    GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                }
             }
 
             switch (GameLogic.GameLogic.CheckEndGame(ref Parameters.GameMatrix))
@@ -191,7 +201,17 @@ namespace Sharp2048
 
             if (IsMove)
             {
-                GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                Random RandNumber = new Random();
+                int NextNumber = RandNumber.Next(100);
+
+                if (NextNumber > 60)
+                {
+                    GameLogic.GameLogic.AddNumber(4, ref Parameters.GameMatrix);
+                }
+                else
+                {
+                    GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                }
             }
 
             switch (GameLogic.GameLogic.CheckEndGame(ref Parameters.GameMatrix))
