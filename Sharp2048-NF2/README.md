@@ -4,7 +4,7 @@
 
 You need the following stuff to build this program:
 
- - Visual Studio 2019
+ - Visual Studio 2019 or older
  - [IniParser]
  
 ## Installation
@@ -21,5 +21,6 @@ You need the following stuff to install this program:
  - Windows XP
  - Windows Vista
  - Windows 7
+ - Linux with mono
 
  [IniParser]: https://github.com/rickyah/ini-parser
