@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.4.0] - (12.10.26)
+
+### Added
+
+ - Rounded pallets in WM version;
+
+### Changed
+
+ - Sync versions;
+ 
+### Fixed
+
+ - Save and load settings;
+
 ## [v1.3.1] - (07.10.26)
 
  - Ported Net Core version to Net 8.0
@@ -28,7 +42,7 @@
 
  - Config file (still no menu);
  - Icon;
- - Rounded palletes;
+ - Rounded pallets;
 
 ### Changed
 
@@ -59,6 +73,8 @@
 
  - First release;
 
+[v1.4.0]: https://github.com/Limows/Sharp2048/releases/tag/v1.4.0
+[v1.3.1]: https://github.com/Limows/Sharp2048/releases/tag/v1.3.1
 [v1.3.0]: https://github.com/Limows/Sharp2048/releases/tag/v1.3.0
 [v1.2.1]: https://github.com/Limows/Sharp2048/releases/tag/v1.2.1
 [v1.2.0]: https://github.com/Limows/Sharp2048/releases/tag/v1.2.0
