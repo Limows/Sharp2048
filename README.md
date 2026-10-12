@@ -4,8 +4,10 @@
 
 ## Versions
 
- - Sharp2048 for desctop Windows
- - Sharp2048_WM for Windows Mobile
+ - Sharp2048 for desktop Windows, uses Net 8
+ - Sharp2048-NF2 uses Net Framework 2, for old Windows
+ - Sharp2048-Cli console version, for testing
+ - Sharp2048_WM for Windows Mobile, uses Net Compact 3.5
 
 ## Used projects
 
