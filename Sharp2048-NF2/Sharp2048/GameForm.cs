@@ -16,7 +16,14 @@ namespace Sharp2048
 
             IOHelper.ReadSettings();
 
-            NewGame();
+            try
+            {
+                LoadGame();
+            }
+            catch
+            {
+                NewGame();
+            }
         }
 
         public void NewGame()
@@ -24,6 +31,16 @@ namespace Sharp2048
             GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
 
             GameLogic.GameLogic.StartGame(ref Parameters.GameMatrix);
+
+            UpdateScreen();
+        }
+
+        public void LoadGame()
+        {
+            GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
+            IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, Parameters.SavePath);
+
+            ScoreBar.Text = "Score: " + Parameters.Score;
 
             UpdateScreen();
         }
@@ -62,7 +79,17 @@ namespace Sharp2048
 
             if (IsMove)
             {
-                GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                Random RandNumber = new Random();
+                int NextNumber = RandNumber.Next(100);
+
+                if (NextNumber > 60)
+                {
+                    GameLogic.GameLogic.AddNumber(4, ref Parameters.GameMatrix);
+                }
+                else
+                {
+                    GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                }
             }
             
             switch(GameLogic.GameLogic.CheckEndGame(ref Parameters.GameMatrix))
