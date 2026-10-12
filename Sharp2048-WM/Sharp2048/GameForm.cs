@@ -19,7 +19,13 @@ namespace Sharp2048
 
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
 
-            IOHelper.ReadSettings();
+            try
+            {
+                IOHelper.ReadSettings();
+            }
+            catch
+            {
+            }
 
             try
             {

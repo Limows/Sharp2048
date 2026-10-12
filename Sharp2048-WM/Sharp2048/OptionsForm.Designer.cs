@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.MainMenu = new System.Windows.Forms.MainMenu();
             this.OkMenuItem = new System.Windows.Forms.MenuItem();
             this.CancelMenuItem = new System.Windows.Forms.MenuItem();
@@ -130,6 +131,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
             this.ClientSize = new System.Drawing.Size(240, 268);
             this.Controls.Add(this.OptionsPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.MainMenu;
             this.Name = "OptionsForm";
             this.Text = "Options";

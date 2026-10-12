@@ -99,8 +99,6 @@ namespace Sharp2048
             sf.LineAlignment = StringAlignment.Center;
             sf.Alignment = StringAlignment.Center;
 
-            //Paint.SmoothingMode = SmoothingMode.AntiAlias;
-
             if (Parameters.Pallete == Parameters.PalleteType.Rounded)
             {
                 FillRoundedRectangle(Paint, Parameters.NumberBrush, NumberRect, 10);
