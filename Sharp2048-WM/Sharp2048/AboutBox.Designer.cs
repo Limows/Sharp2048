@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelBuild = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@
             this.ClientSize = new System.Drawing.Size(240, 268);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.AboutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.MainMenu;
             this.Name = "AboutBox";
             this.Text = "О программе";

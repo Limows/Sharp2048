@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.MainMenu = new System.Windows.Forms.MainMenu();
             this.GameMenuItem = new System.Windows.Forms.MenuItem();
             this.NewGameMenuItem = new System.Windows.Forms.MenuItem();
@@ -146,6 +147,7 @@
             this.ClientSize = new System.Drawing.Size(240, 268);
             this.Controls.Add(this.GameFieldBox);
             this.Controls.Add(this.ScoreBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.MainMenu;
             this.Name = "GameForm";
             this.Text = "2048";

@@ -70,6 +70,7 @@
             this.ClientSize = new System.Drawing.Size(240, 294);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.QRBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.Menu = this.MainMenu;
             this.Name = "DonateBox";
