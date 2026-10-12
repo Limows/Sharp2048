@@ -14,7 +14,14 @@ namespace Sharp2048
             Parameters.GameField = new Bitmap(GameFieldBox.Width, GameFieldBox.Height);
             this.BackColor = Color.FromArgb(187, 173, 160);
 
-            IOHelper.ReadSettings();
+            try
+            {
+                IOHelper.ReadSettings();
+            }
+            catch
+            {
+
+            }
 
             try
             {
@@ -40,7 +47,7 @@ namespace Sharp2048
             GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
             IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, Parameters.SavePath);
 
-            ScoreBar.Text = "Score: " + Parameters.Score;
+            ScoreLabel.Text = "Score: " + Parameters.Score;
 
             UpdateScreen();
         }
@@ -152,7 +159,8 @@ namespace Sharp2048
 
             Options.ShowDialog();
 
-            NewGame();
+            if (Parameters.IsSaveOptions == true)
+                NewGame();
         }
     }
 }

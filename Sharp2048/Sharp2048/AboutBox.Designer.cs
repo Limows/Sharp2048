@@ -28,93 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.labelBuild = new System.Windows.Forms.Label();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.OKButton = new System.Windows.Forms.Button();
-            this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+            labelProductName = new System.Windows.Forms.Label();
+            labelVersion = new System.Windows.Forms.Label();
+            labelBuild = new System.Windows.Forms.Label();
+            labelCompanyName = new System.Windows.Forms.Label();
+            textBoxDescription = new System.Windows.Forms.TextBox();
+            OKButton = new System.Windows.Forms.Button();
+            MainMenu = new System.Windows.Forms.MenuStrip();
+            SuspendLayout();
             // 
             // labelProductName
             // 
-            this.labelProductName.Location = new System.Drawing.Point(7, 10);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(143, 20);
-            this.labelProductName.TabIndex = 16;
-            this.labelProductName.Text = "Имя программы";
+            labelProductName.Location = new System.Drawing.Point(7, 10);
+            labelProductName.Name = "labelProductName";
+            labelProductName.Size = new System.Drawing.Size(143, 20);
+            labelProductName.TabIndex = 16;
+            labelProductName.Text = "Имя программы";
             // 
             // labelVersion
             // 
-            this.labelVersion.Location = new System.Drawing.Point(7, 32);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(143, 20);
-            this.labelVersion.TabIndex = 15;
-            this.labelVersion.Text = "Версия";
+            labelVersion.Location = new System.Drawing.Point(7, 32);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new System.Drawing.Size(143, 20);
+            labelVersion.TabIndex = 15;
+            labelVersion.Text = "Версия";
             // 
             // labelBuild
             // 
-            this.labelBuild.Location = new System.Drawing.Point(7, 55);
-            this.labelBuild.Name = "labelBuild";
-            this.labelBuild.Size = new System.Drawing.Size(143, 20);
-            this.labelBuild.TabIndex = 14;
-            this.labelBuild.Text = "Билд";
+            labelBuild.Location = new System.Drawing.Point(7, 55);
+            labelBuild.Name = "labelBuild";
+            labelBuild.Size = new System.Drawing.Size(143, 20);
+            labelBuild.TabIndex = 14;
+            labelBuild.Text = "Билд";
             // 
             // labelCompanyName
             // 
-            this.labelCompanyName.Location = new System.Drawing.Point(7, 77);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(143, 20);
-            this.labelCompanyName.TabIndex = 13;
-            this.labelCompanyName.Text = "Имя компании";
+            labelCompanyName.Location = new System.Drawing.Point(7, 77);
+            labelCompanyName.Name = "labelCompanyName";
+            labelCompanyName.Size = new System.Drawing.Size(143, 20);
+            labelCompanyName.TabIndex = 13;
+            labelCompanyName.Text = "Имя компании";
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.AcceptsReturn = true;
-            this.textBoxDescription.BackColor = System.Drawing.Color.White;
-            this.textBoxDescription.Location = new System.Drawing.Point(7, 100);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.Size = new System.Drawing.Size(210, 133);
-            this.textBoxDescription.TabIndex = 7;
+            textBoxDescription.AcceptsReturn = true;
+            textBoxDescription.BackColor = System.Drawing.Color.White;
+            textBoxDescription.Location = new System.Drawing.Point(7, 100);
+            textBoxDescription.Multiline = true;
+            textBoxDescription.Name = "textBoxDescription";
+            textBoxDescription.ReadOnly = true;
+            textBoxDescription.Size = new System.Drawing.Size(210, 133);
+            textBoxDescription.TabIndex = 7;
             // 
             // OKButton
             // 
-            this.OKButton.BackColor = System.Drawing.Color.White;
-            this.OKButton.Location = new System.Drawing.Point(78, 239);
-            this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(72, 25);
-            this.OKButton.TabIndex = 12;
-            this.OKButton.Text = "OK";
-            this.OKButton.UseVisualStyleBackColor = false;
-            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            OKButton.BackColor = System.Drawing.Color.White;
+            OKButton.Location = new System.Drawing.Point(78, 239);
+            OKButton.Name = "OKButton";
+            OKButton.Size = new System.Drawing.Size(72, 25);
+            OKButton.TabIndex = 12;
+            OKButton.Text = "OK";
+            OKButton.UseVisualStyleBackColor = false;
+            OKButton.Click += OKButton_Click;
             // 
             // MainMenu
             // 
-            this.MainMenu.Location = new System.Drawing.Point(0, 0);
-            this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(200, 24);
-            this.MainMenu.TabIndex = 0;
+            MainMenu.Location = new System.Drawing.Point(0, 0);
+            MainMenu.Name = "MainMenu";
+            MainMenu.Size = new System.Drawing.Size(200, 24);
+            MainMenu.TabIndex = 0;
             // 
             // AboutBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
-            this.ClientSize = new System.Drawing.Size(224, 281);
-            this.Controls.Add(this.OKButton);
-            this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.labelCompanyName);
-            this.Controls.Add(this.labelBuild);
-            this.Controls.Add(this.labelVersion);
-            this.Controls.Add(this.labelProductName);
-            this.Name = "AboutBox";
-            this.Text = "About";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoScroll = true;
+            BackColor = System.Drawing.Color.FromArgb(187, 173, 160);
+            ClientSize = new System.Drawing.Size(224, 281);
+            Controls.Add(OKButton);
+            Controls.Add(textBoxDescription);
+            Controls.Add(labelCompanyName);
+            Controls.Add(labelBuild);
+            Controls.Add(labelVersion);
+            Controls.Add(labelProductName);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "AboutBox";
+            Text = "About";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

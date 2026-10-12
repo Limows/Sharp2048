@@ -82,6 +82,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.Label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.MainMenu;
             this.Name = "DonateBox";
             this.Text = "Donate";

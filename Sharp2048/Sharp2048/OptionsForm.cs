@@ -29,10 +29,8 @@ namespace Sharp2048
                 }
 
                 Parameters.FieldSize = (int)(FieldSizeUpDown.Value);
-            }
-            else
-            {
-                e.Cancel = true;
+
+                IOHelper.WriteSettings();
             }
         }
 
@@ -58,7 +56,7 @@ namespace Sharp2048
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Parameters.IsSaveOptions = false;
+             Parameters.IsSaveOptions = false;
             Close();
         }
     }

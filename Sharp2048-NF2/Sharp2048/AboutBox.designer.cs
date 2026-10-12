@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelBuild = new System.Windows.Forms.Label();
@@ -105,6 +106,7 @@
             this.Controls.Add(this.labelBuild);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelProductName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.MainMenu;
             this.Name = "AboutBox";
             this.Text = "About";

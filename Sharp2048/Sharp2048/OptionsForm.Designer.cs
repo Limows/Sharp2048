@@ -28,124 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OptionsPanel = new System.Windows.Forms.Panel();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.OkButton = new System.Windows.Forms.Button();
-            this.FieldSizeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.SizeLabel = new System.Windows.Forms.Label();
-            this.RoundedButton = new System.Windows.Forms.RadioButton();
-            this.SquareButton = new System.Windows.Forms.RadioButton();
-            this.ShapeLabel = new System.Windows.Forms.Label();
-            this.OptionsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FieldSizeUpDown)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
+            OptionsPanel = new System.Windows.Forms.Panel();
+            CancelButton = new System.Windows.Forms.Button();
+            OkButton = new System.Windows.Forms.Button();
+            FieldSizeUpDown = new System.Windows.Forms.NumericUpDown();
+            SizeLabel = new System.Windows.Forms.Label();
+            RoundedButton = new System.Windows.Forms.RadioButton();
+            SquareButton = new System.Windows.Forms.RadioButton();
+            ShapeLabel = new System.Windows.Forms.Label();
+            OptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FieldSizeUpDown).BeginInit();
+            SuspendLayout();
             // 
             // OptionsPanel
             // 
-            this.OptionsPanel.AutoScroll = true;
-            this.OptionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
-            this.OptionsPanel.Controls.Add(this.CancelButton);
-            this.OptionsPanel.Controls.Add(this.OkButton);
-            this.OptionsPanel.Controls.Add(this.FieldSizeUpDown);
-            this.OptionsPanel.Controls.Add(this.SizeLabel);
-            this.OptionsPanel.Controls.Add(this.RoundedButton);
-            this.OptionsPanel.Controls.Add(this.SquareButton);
-            this.OptionsPanel.Controls.Add(this.ShapeLabel);
-            this.OptionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OptionsPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionsPanel.Name = "OptionsPanel";
-            this.OptionsPanel.Size = new System.Drawing.Size(240, 268);
-            this.OptionsPanel.TabIndex = 0;
+            OptionsPanel.AutoScroll = true;
+            OptionsPanel.BackColor = System.Drawing.Color.FromArgb(187, 173, 160);
+            OptionsPanel.Controls.Add(CancelButton);
+            OptionsPanel.Controls.Add(OkButton);
+            OptionsPanel.Controls.Add(FieldSizeUpDown);
+            OptionsPanel.Controls.Add(SizeLabel);
+            OptionsPanel.Controls.Add(RoundedButton);
+            OptionsPanel.Controls.Add(SquareButton);
+            OptionsPanel.Controls.Add(ShapeLabel);
+            OptionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            OptionsPanel.Location = new System.Drawing.Point(0, 0);
+            OptionsPanel.Name = "OptionsPanel";
+            OptionsPanel.Size = new System.Drawing.Size(240, 268);
+            OptionsPanel.TabIndex = 0;
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(153, 233);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 8;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            CancelButton.Location = new System.Drawing.Point(153, 233);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new System.Drawing.Size(75, 23);
+            CancelButton.TabIndex = 8;
+            CancelButton.Text = "Cancel";
+            CancelButton.UseVisualStyleBackColor = true;
+            CancelButton.Click += CancelButton_Click;
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(72, 233);
-            this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 23);
-            this.OkButton.TabIndex = 7;
-            this.OkButton.Text = "OK";
-            this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            OkButton.Location = new System.Drawing.Point(72, 233);
+            OkButton.Name = "OkButton";
+            OkButton.Size = new System.Drawing.Size(75, 23);
+            OkButton.TabIndex = 7;
+            OkButton.Text = "OK";
+            OkButton.UseVisualStyleBackColor = true;
+            OkButton.Click += OkButton_Click;
             // 
             // FieldSizeUpDown
             // 
-            this.FieldSizeUpDown.Location = new System.Drawing.Point(3, 116);
-            this.FieldSizeUpDown.Maximum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.FieldSizeUpDown.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.FieldSizeUpDown.Name = "FieldSizeUpDown";
-            this.FieldSizeUpDown.Size = new System.Drawing.Size(61, 20);
-            this.FieldSizeUpDown.TabIndex = 4;
-            this.FieldSizeUpDown.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            FieldSizeUpDown.Location = new System.Drawing.Point(3, 116);
+            FieldSizeUpDown.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
+            FieldSizeUpDown.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
+            FieldSizeUpDown.Name = "FieldSizeUpDown";
+            FieldSizeUpDown.Size = new System.Drawing.Size(61, 23);
+            FieldSizeUpDown.TabIndex = 4;
+            FieldSizeUpDown.Value = new decimal(new int[] { 3, 0, 0, 0 });
             // 
             // SizeLabel
             // 
-            this.SizeLabel.Location = new System.Drawing.Point(3, 93);
-            this.SizeLabel.Name = "SizeLabel";
-            this.SizeLabel.Size = new System.Drawing.Size(100, 20);
-            this.SizeLabel.TabIndex = 5;
-            this.SizeLabel.Text = "Field Size (beta):";
+            SizeLabel.Location = new System.Drawing.Point(3, 93);
+            SizeLabel.Name = "SizeLabel";
+            SizeLabel.Size = new System.Drawing.Size(100, 20);
+            SizeLabel.TabIndex = 5;
+            SizeLabel.Text = "Field Size (beta):";
             // 
             // RoundedButton
             // 
-            this.RoundedButton.Location = new System.Drawing.Point(3, 60);
-            this.RoundedButton.Name = "RoundedButton";
-            this.RoundedButton.Size = new System.Drawing.Size(100, 20);
-            this.RoundedButton.TabIndex = 2;
-            this.RoundedButton.Text = "Rounded";
+            RoundedButton.Location = new System.Drawing.Point(3, 60);
+            RoundedButton.Name = "RoundedButton";
+            RoundedButton.Size = new System.Drawing.Size(100, 20);
+            RoundedButton.TabIndex = 2;
+            RoundedButton.Text = "Rounded";
             // 
             // SquareButton
             // 
-            this.SquareButton.Location = new System.Drawing.Point(3, 34);
-            this.SquareButton.Name = "SquareButton";
-            this.SquareButton.Size = new System.Drawing.Size(100, 20);
-            this.SquareButton.TabIndex = 1;
-            this.SquareButton.Text = "Square";
+            SquareButton.Location = new System.Drawing.Point(3, 34);
+            SquareButton.Name = "SquareButton";
+            SquareButton.Size = new System.Drawing.Size(100, 20);
+            SquareButton.TabIndex = 1;
+            SquareButton.Text = "Square";
             // 
             // ShapeLabel
             // 
-            this.ShapeLabel.Location = new System.Drawing.Point(3, 11);
-            this.ShapeLabel.Name = "ShapeLabel";
-            this.ShapeLabel.Size = new System.Drawing.Size(100, 20);
-            this.ShapeLabel.TabIndex = 6;
-            this.ShapeLabel.Text = "Palletes Shape:";
+            ShapeLabel.Location = new System.Drawing.Point(3, 11);
+            ShapeLabel.Name = "ShapeLabel";
+            ShapeLabel.Size = new System.Drawing.Size(100, 20);
+            ShapeLabel.TabIndex = 6;
+            ShapeLabel.Text = "Palletes Shape:";
             // 
             // OptionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(173)))), ((int)(((byte)(160)))));
-            this.ClientSize = new System.Drawing.Size(240, 268);
-            this.Controls.Add(this.OptionsPanel);
-            this.Name = "OptionsForm";
-            this.Text = "Options";
-            this.Closing += new System.ComponentModel.CancelEventHandler(this.OptionsForm_Closing);
-            this.Load += new System.EventHandler(this.OptionsForm_Load);
-            this.OptionsPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.FieldSizeUpDown)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoScroll = true;
+            BackColor = System.Drawing.Color.FromArgb(187, 173, 160);
+            ClientSize = new System.Drawing.Size(240, 268);
+            Controls.Add(OptionsPanel);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "OptionsForm";
+            Text = "Options";
+            Closing += OptionsForm_Closing;
+            Load += OptionsForm_Load;
+            OptionsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)FieldSizeUpDown).EndInit();
+            ResumeLayout(false);
 
         }
 

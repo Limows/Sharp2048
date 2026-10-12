@@ -29,10 +29,8 @@ namespace Sharp2048
                 }
 
                 Parameters.FieldSize = (int)(FieldSizeUpDown.Value);
-            }
-            else
-            {
-                e.Cancel = true;
+
+                IOHelper.WriteSettings();
             }
         }
 

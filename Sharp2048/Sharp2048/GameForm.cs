@@ -40,7 +40,7 @@ namespace Sharp2048
             GameLogic.GameLogic.Init(out Parameters.GameMatrix, out Parameters.Score, Parameters.FieldSize);
             IOHelper.ReadGame(ref Parameters.GameMatrix, ref Parameters.Score, Parameters.SavePath);
 
-            ScoreBar.Text = "Score: " + Parameters.Score;
+            ScoreLabel.Text = "Score: " + Parameters.Score;
 
             UpdateScreen();
         }
@@ -152,7 +152,8 @@ namespace Sharp2048
 
             Options.ShowDialog();
 
-            NewGame();
+            if (Parameters.IsSaveOptions == true)
+                NewGame();
         }
     }
 }

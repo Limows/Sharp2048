@@ -60,11 +60,11 @@ namespace Sharp2048
 
                 if (NextNumber > 60)
                 {
-                    GameLogic.GameLogic.AddNumber(4, ref Parameters.GameMatrix);
+                    GameLogic.GameLogic.AddNumber(4, ref GameMatrix);
                 }
                 else
                 {
-                    GameLogic.GameLogic.AddNumber(2, ref Parameters.GameMatrix);
+                    GameLogic.GameLogic.AddNumber(2, ref GameMatrix);
                 }
             }
 
