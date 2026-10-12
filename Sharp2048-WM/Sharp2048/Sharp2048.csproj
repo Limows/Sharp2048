@@ -119,9 +119,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config.ini">
+    <Content Include="Config.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sharp2048.ico" />
