@@ -64,6 +64,7 @@ namespace Sharp2048
                 default: NumberColor = Color.FromArgb(204, 192, 179); break;
             }
 
+            if (Parameters.NumberBrush != null) Parameters.NumberBrush.Dispose();
             Parameters.NumberBrush = new SolidBrush(NumberColor);
         }
 
